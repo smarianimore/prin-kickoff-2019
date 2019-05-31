@@ -1,49 +1,191 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 
-		<title>reveal.js</title>
+    <title> Risk Prediction as a Service. CBMS 2019 @ Cordoba, Spain </title>
+    <meta content="Presentation 'Risk Prediction as a Service' given by Stefano Mariani @ CBMS 2019 - Cordoba, Spain" name="description">
+    <meta content="Stefano Mariani" name="author">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/reveal.css" rel="stylesheet">
+    <link href="css/theme/blood.css" rel="stylesheet">
+    <!-- black, white, league, beige, sky, blood, night, serif, simple, solarized -->
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
 
-		<script src="js/reveal.js"></script>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section data-autoslide="5000" data-transition="fade">
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+            <h2> Risk Prediction<br/>as a Service: </h2>
+            <br/>
+            <h4> a DSS architecture promoting<br/>interoperability and collaboration </h4>
+            <br/>
+            <br/>
+            <p><a href="http://stefanomariani.apice.unibo.it"> Stefano Mariani </a></p>
+            <p><small><em> Università di Modena e Reggio Emilia </em></small></p>
+
+        </section>
+        <section data-transition="concave">
+
+            <h3> Outline </h3>
+            <br/>
+            <ol>
+                <li class="fragment"> Scenario
+                <li class="fragment"> Proposition
+                <li class="fragment"> Enabling technologies
+                <li class="fragment"> Application
+                <li class="fragment"> Takeaways
+            </ol>
+
+            <aside class="notes">
+                <ol>
+                    <li> clinical prediction + use cases
+                    <li> goal + architecture + functionalities
+                    <li> PMML/PFA + SOA
+                    <li> connecare + HCB case study
+                </ol>
+            </aside>
+
+        </section>
+        <section>
+            <section data-transition="zoom">
+
+                <h3> Scenario </h3>
+                <br/>
+                <ul>
+                    <li class="fragment"> Growing ICT <em>impact</em> on clinical practice and research
+                        <ul>
+                            <li class="fragment"> ML <span class="fragment"> >> <span class="fragment highlight-green"> predictive modelling </span></span>
+                                <span class="fragment"> >> <span class="fragment highlight-green"> decision support </span></span>
+                            <li class="fragment"> i.e. risk prediction
+                        </ul>
+                    <li class="fragment"><em>Barriers</em> to overcome
+                        <ul>
+                            <li class="fragment"> <span class="fragment highlight-red"> standards </span>
+                            <li class="fragment"> <span class="fragment highlight-red"> technological development </span>
+                        </ul>
+                </ul>
+
+            </section>
+            <section>
+
+                <h3> Use cases </h3>
+                <br/>
+                <ol>
+                    <li class="fragment"> Data science teams want to <span class="fragment highlight-green"> join efforts </span> for better predictive models
+                        <ul>
+                            <li class="fragment"> geographical distribution <span class="fragment"> >> <span class="fragment highlight-red"> remote collaboration </span></span>
+                            <li class="fragment"> different organisations <span class="fragment"> >> <span class="fragment highlight-red"> data sharing cumbersome </span></span>
+                            <li class="fragment"> different technical skills <span class="fragment"> >> <span class="fragment highlight-red"> sharing code barely useful </span></span>
+                        </ul>
+                </ol>
+
+            </section>
+            <section>
+
+                <h3></h3>
+                <br/>
+                <ol start="2">
+                    <li class="fragment"> Clinical staff wants to <span class="fragment highlight-green"> experiment </span> predictive modeling
+                        <ul>
+                            <li class="fragment"> lacks resources and skills <span class="fragment"> >> <span class="fragment highlight-red"> up-front investment </span></span>
+                        </ul>
+                </ol>
+
+            </section>
+            <section data-transition="concave">
+
+                <h3></h3>
+                <br/>
+                <ol start="3">
+                    <li class="fragment"> Healthcare organisations want to assess <span class="fragment highlight-green"> transferability </span> of models
+                        <ul>
+                            <li class="fragment"> lack reciprocal trust <span class="fragment"> >> <span class="fragment highlight-red"> no data disclosure </span></span>
+                            <li class="fragment"> different technical skills <span class="fragment"> >> <span class="fragment highlight-red"> sharing code barely useful </span></span>
+                        </ul>
+                </ol>
+
+            </section>
+        </section>
+        <section>
+            <section data-transition="zoom">
+
+                <h3> Proposition </h3>
+                <br/>
+                <p class="fragment fade-in-then-semi-out"> Achieve </p>
+                <p class="fragment grow"> ubiquitous access & seamless deployment </p>
+                <p class="fragment fade-in-then-semi-out"> of prediction models, and </p>
+                <p class="fragment grow"> interoperability & collaboration </p>
+                <p class="fragment fade-in-then-semi-out"> between data science teams and, possibly, clinicians </p>
+                <p class="fragment"></p>
+
+            </section>
+            <section>
+
+                <h3> Architecture </h3>
+                <br/>
+                <p>
+                    <img width="512" height="384" align="left" data-src="DSS-arch.png" alt="DSS architecture">
+                <p class="fragment fade-in-then-semi-out"> <small> <strong>Web API</strong>: RESTful endpoints </small></p>
+                <p class="fragment"> <small> <strong>Translation</strong>: R/Python models to </small><span class="fragment highlight-green"><small> PMML/PFA </small></span></p>
+                <p class="fragment fade-in-then-semi-out"> <small> <strong>Prediction</strong>: Serve predictions </small></p>
+                <p class="fragment fade-in-then-semi-out"> <small> <strong>Learning</strong>: Build prediction models </small></p>
+                <p class="fragment fade-in-then-semi-out"> <small> <strong>Storage</strong>: Store models </small></p>
+                <p class="fragment"></p>
+                </p>
+
+            </section>
+            <section>
+
+                <h3> Functionalities </h3>
+
+
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+    Reveal.initialize({
+        autoSlide: 1000,
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: 120,
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+        pdfSeparateFragments: false, // http://localhost:63342/reveal.js/?print-pdf/&showNotes=true
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/zoom-js/zoom.js'},
+            {src: 'plugin/notes/notes.js'},
+            //{src: 'plugin/highlight/highlight.js', async: true}
+        ]
+    });
+</script>
+
+</body>
 </html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+
+    <title>CBMS 2019 @ Cordoba, Spain</title>
+
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/reveal.css" rel="stylesheet">
+    <link href="css/theme/black.css" rel="stylesheet">
+    <!-- white, league, beige, sky, night, serif, simple, solarized -->
+
+    <!-- Theme used for syntax highlighting of code -->
+    <!-- <link href="lib/css/monokai.css" rel="stylesheet"> -->
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <section>Slide 1a</section>
+            <section>Slide 1b</section>
+        </section>
+        <section>Slide 2
+            <aside class="notes" data-markdown> Just a random **note**</aside>
+        </section>
+        <section data-markdown>
+	        <textarea data-template>
+		        ## Page title
+
+		        - A paragraph with some text and a [link](http://hakim.se).
+                - two <!-- .element: class="fragment" data-fragment-index="2" -->
+                - three <!-- .element: class="fragment" data-fragment-index="1" -->
+
+	        </textarea>
+        </section>
+        <section data-background-color="#ff0000" data-background-transition="convex">
+            <h2>Color</h2>
+        </section>
+        <section data-transition="zoom">
+            <h2>This slide will override the presentation transition and zoom!</h2>
+        </section>
+        <section data-background-color="#ff0000" data-background-transition="zoom" data-transition="zoom">
+            <h2>Color and ZOOM!</h2>
+        </section>
+        <section data-transition="slide">
+            The train goes on …
+        </section>
+        <section data-transition="slide">
+            and on …
+        </section>
+        <section data-transition="slide-in fade-out">
+            and stops.
+        </section>
+        <section data-transition="fade-in slide-out">
+            (Passengers entering and leaving)
+        </section>
+        <section data-transition="slide">
+            And it starts again.
+        </section>
+        <section>
+            <p class="fragment grow">grow</p>
+            <p class="fragment shrink">shrink</p>
+            <p class="fragment fade-out">fade-out</p>
+            <p class="fragment fade-up">fade-up (also down, left and right!)</p>
+            <p class="fragment fade-in-then-out">fades in, then out when we move to the next step</p>
+            <p class="fragment fade-in-then-semi-out">fades in, then obfuscate when we move to the next step</p>
+            <p class="fragment highlight-current-blue">blue only once</p>
+            <p class="fragment highlight-red">highlight-red</p> <!-- green, blue -->
+        </section>
+        <section>
+            <p class="fragment" data-fragment-index="3">Appears last</p>
+            <p class="fragment" data-fragment-index="1">Appears first</p>
+            <p class="fragment" data-fragment-index="2">Appears second</p>
+        </section>
+    </div>
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+    Reveal.initialize({
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: 120,
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+        pdfSeparateFragments: false, // http://localhost:63342/reveal.js/?print-pdf/&showNotes=true
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true},
+            //{src: 'plugin/highlight/highlight.js', async: true}
+        ]
+    });
+</script>
+</body>
+</html>

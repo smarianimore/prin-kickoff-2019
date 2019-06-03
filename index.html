@@ -41,7 +41,7 @@
             <p><small><em> Università di Modena e Reggio Emilia </em></small></p>
 
         </section>
-        <section data-transition="concave">
+        <section data-transition="convex">
 
             <h3> Outline </h3>
             <br/>
@@ -50,7 +50,6 @@
                 <li class="fragment"> Proposition
                 <li class="fragment"> Enabling technologies
                 <li class="fragment"> Application
-                <li class="fragment"> Takeaways
             </ol>
 
             <aside class="notes">
@@ -63,36 +62,38 @@
             </aside>
 
         </section>
-        <section>
+        <section data-transition="convex">
             <section data-transition="zoom">
 
                 <h3> Scenario </h3>
                 <br/>
                 <ul>
-                    <li class="fragment"> Growing ICT <em>impact</em> on clinical practice and research
+                    <li class="fragment"> Growing <span class="fragment highlight-green"> ICT impact </span> on clinical practice and research
                         <ul>
-                            <li class="fragment"> ML <span class="fragment"> >> <span class="fragment highlight-green"> predictive modelling </span></span>
-                                <span class="fragment"> >> <span class="fragment highlight-green"> decision support </span></span>
+                            <li class="fragment"> <em>ML</em> >> <span class="fragment"> predictive modelling >> </span> <span class="fragment"> decision support </span>
                             <li class="fragment"> i.e. risk prediction
                         </ul>
                     <li class="fragment"><em>Barriers</em> to overcome
                         <ul>
-                            <li class="fragment"> <span class="fragment highlight-red"> standards </span>
-                            <li class="fragment"> <span class="fragment highlight-red"> technological development </span>
+                            <li class="fragment highlight-current-red"> standards
+                            <li class="fragment highlight-current-red"> technological development
                         </ul>
                 </ul>
 
             </section>
+            <section data-background="DSS-usecase.png" data-background-size="1600px">
+
+                <h3 class="fragment highlight-green"> Use cases </h3>
+
+            </section>
             <section>
 
-                <h3> Use cases </h3>
-                <br/>
                 <ol>
                     <li class="fragment"> Data science teams want to <span class="fragment highlight-green"> join efforts </span> for better predictive models
                         <ul>
-                            <li class="fragment"> geographical distribution <span class="fragment"> >> <span class="fragment highlight-red"> remote collaboration </span></span>
-                            <li class="fragment"> different organisations <span class="fragment"> >> <span class="fragment highlight-red"> data sharing cumbersome </span></span>
-                            <li class="fragment"> different technical skills <span class="fragment"> >> <span class="fragment highlight-red"> sharing code barely useful </span></span>
+                            <li class="fragment"> geographical distribution >> <span class="fragment highlight-current-red"> remote collaboration only </span>
+                            <li class="fragment"> different organisations >> <span class="fragment highlight-current-red"> data sharing cumbersome </span>
+                            <li class="fragment"> different technical skills >> <span class="fragment highlight-current-red"> sharing code barely useful </span>
                         </ul>
                 </ol>
 
@@ -104,35 +105,35 @@
                 <ol start="2">
                     <li class="fragment"> Clinical staff wants to <span class="fragment highlight-green"> experiment </span> predictive modeling
                         <ul>
-                            <li class="fragment"> lacks resources and skills <span class="fragment"> >> <span class="fragment highlight-red"> up-front investment </span></span>
+                            <li class="fragment"> lacks IT resources >> <span class="fragment highlight-current-red"> up-front investment </span>
+                            <li class="fragment"> lacks IT skills >> <span class="fragment highlight-current-red"> steep learning curve </span>
                         </ul>
                 </ol>
 
             </section>
-            <section data-transition="concave">
+            <section>
 
                 <h3></h3>
                 <br/>
                 <ol start="3">
                     <li class="fragment"> Healthcare organisations want to assess <span class="fragment highlight-green"> transferability </span> of models
                         <ul>
-                            <li class="fragment"> lack reciprocal trust <span class="fragment"> >> <span class="fragment highlight-red"> no data disclosure </span></span>
-                            <li class="fragment"> different technical skills <span class="fragment"> >> <span class="fragment highlight-red"> sharing code barely useful </span></span>
+                            <li class="fragment"> lack reciprocal trust >> <span class="fragment highlight-current-red"> no data disclosure </span>
+                            <li class="fragment"> different technical skills >> <span class="fragment highlight-current-red"> incompatible models </span>
                         </ul>
                 </ol>
 
             </section>
         </section>
-        <section>
+        <section data-transition="convex">
             <section data-transition="zoom">
 
                 <h3> Proposition </h3>
                 <br/>
-                <p class="fragment fade-in-then-semi-out"> Achieve </p>
-                <p class="fragment grow"> ubiquitous access & seamless deployment </p>
-                <p class="fragment fade-in-then-semi-out"> of prediction models, and </p>
-                <p class="fragment grow"> interoperability & collaboration </p>
-                <p class="fragment fade-in-then-semi-out"> between data science teams and, possibly, clinicians </p>
+                <p class="fragment grow"> Ubiquitous <span class="fragment highlight-green">access</span> & seamless <span class="fragment highlight-green">deployment</span> </p>
+                <p class="fragment fade-in-then-semi-out"> of prediction models. </p>
+                <p class="fragment grow"> Interoperability & collaboration </p>
+                <p class="fragment fade-in-then-semi-out"> between data science teams and, possibly, clinicians. </p>
                 <p class="fragment"></p>
 
             </section>
@@ -154,7 +155,142 @@
             <section>
 
                 <h3> Functionalities </h3>
+                <div class="row" style="display: flex">
+                    <div class="column" style="flex: 50%">
+                        <ul>
+                            <li> <span class="fragment highlight-green"> Plugin mode</span>: </li>
+                            <ul>
+                                <li class="fragment"> upload model </li>
+                                <li class="fragment"> list models </li>
+                                <li class="fragment"> <em>inspect</em> model <small>(metadata)</small></li>
+                                <li class="fragment"> download model </li>
+                                <li class="fragment"> delete model </li>
+                                <li class="fragment"> apply model </li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="column" style="flex: 50%">
+                        <ul>
+                            <li> <span class="fragment highlight-green">Learning mode</span>: </li>
+                            <ul>
+                                <li class="fragment"> train model </li>
+                                <li class="fragment"> test model </li>
+                                <li class="fragment"> <em>save</em> model <small>(freeze)</small></li>
+                                <li class="fragment"> discard model </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+                <br/>
+                <ul>
+                    <li> Common: </li>
+                    <ul>
+                        <li class="fragment"> set <em>global</em> <small>(usable anywhere vs. provider site)</small> </li>
+                        <li class="fragment"> set <em>online</em> <small>(learning on new data vs. "frozen")</small> </li>
+                    </ul>
+                </ul>
 
+            </section>
+        </section>
+        <section data-transition="convex">
+            <section data-transition="zoom">
+
+                <h3> Enabling technologies</h3>
+                <br/>
+                <ul>
+                    <li class="fragment"> <span class="fragment highlight-green">"<em>X</em>-as-a-Service"</span> paradigm </li>
+                    <ul>
+                        <li class="fragment"> especially: "ML as a Service" (MLaaS) </li>
+                    </ul>
+                    <li class="fragment"> <span class="fragment highlight-green">Standards</span> promoting seamless exchange and deployment of ML models </li>
+                    <ul>
+                        <li class="fragment"> don't brake the <em>data pipeline</em> </li>
+                        <li class="fragment"> language / framework agnostic >> <span class="fragment"><em>"build once, run everywhere"</em> </span></li>
+                    </ul>
+                </ul>
+
+            </section>
+            <section>
+
+                <h3> Service-oriented Architectures </h3>
+
+            </section>
+            <section>
+
+                <h3> PMML / PFA </h3>
+                <div class="row" style="display: flex">
+                    <div class="column" style="flex: 25%">
+                        <br/>
+                        <small><ul>
+                            <li> Predictive Model Markup Language </li>
+                            <ul>
+                                <li class="fragment"> ML <span class="fragment highlight-green">models</span> representation format based on XML </li>
+                            </ul>
+                        </ul></small>
+                    </div>
+                    <div class="column" style="flex: 50%">
+                        <p>
+                            <a href="http://dmg.org/pfa/docs/motivation/#flexibility-and-safety"> <img width="500" height="188" align="center" data-src="ml-pipeline.jpg" alt="ML pipeline"> </a>
+                        </p>
+                    </div>
+                    <div class="column" style="flex:25%">
+                        <br/>
+                        <small><ul>
+                            <li> Portable Format for Analytics </li>
+                            <ul>
+                                <li class="fragment"> ML <span class="fragment highlight-green">pipelines</span> representation format based on JSON </li>
+                            </ul>
+                        </ul></small>
+                    </div>
+                </div>
+                <ul>
+                    <li class="fragment"> <span class="fragment highlight-green"> independent </span> development / deployment of predictive models </li>
+                    <li class="fragment"> <span class="fragment highlight-green"> flexibility </span> of production environment </li>
+                    <li class="fragment"> <span class="fragment highlight-green"> co-existence </span> of different programming languages and frameworks </li>
+                </ul>
+
+            </section>
+        </section>
+        <section data-transition="convex">
+            <section data-transition="zoom">
+
+                <h3> Application </h3>
+
+            </section>
+            <section>
+
+                <h3> CONNECARE </h3>
+
+            </section>
+            <section>
+
+                <h3> Risk Prediction </h3>
+
+            </section>
+        </section>
+        <section data-transition="fade">
+            <section data-transition="zoom">
+
+                <h3> Conclusion </h3>
+
+            </section>
+            <section data-autoslide="5000">
+
+                <br/>
+                <h2> Thanks </h2>
+                <h2> for your attention </h2>
+                <br/>
+                <br/>
+                <h4 class="fragment fade-in-then-semi-out"> Questions? </h4>
+                <p class="fragment"></p>
+                <br/>
+                <p><a href="http://stefanomariani.apice.unibo.it"> Stefano Mariani </a></p>
+                <p><small><em> Università di Modena e Reggio Emilia </em></small></p>
+
+            </section>
+            <section data-autoslide="5000">
+
+                <h3> References </h3>
 
             </section>
         </section>

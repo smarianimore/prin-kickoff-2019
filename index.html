@@ -81,7 +81,7 @@
                 </ul>
 
             </section>
-            <section data-background="DSS-usecase.png" data-background-size="1600px">
+            <section data-autoslide="2000" data-background="DSS-usecase.png" data-background-size="1600px">
 
                 <h3 class="fragment highlight-green"> Use cases </h3>
 
@@ -191,6 +191,16 @@
                 </ul>
 
             </section>
+            <section>
+
+                <h3> Non-functional Properties </h3>
+                <br/>
+                <p class="fragment"> <strong>Trust</strong>: local validation + transparency <small>(inspection)</small> </p>
+                <p class="fragment"> <strong>Language / framework agnostic</strong>: automatic translation + PMML/PFA <small>(R, caret + Python, scikit-learn)</small> </p>
+                <p class="fragment"> <strong>Interoperability</strong>: PMML/PFA, HTTP API, JSON/XML data </p>
+                <p class="fragment"> <strong>Accessibility</strong>: Web Service, REST architecture </p>
+
+            </section>
         </section>
         <section data-transition="convex">
             <section data-transition="zoom">
@@ -200,7 +210,7 @@
                 <ul>
                     <li class="fragment"> <span class="fragment highlight-green">"<em>X</em>-as-a-Service"</span> paradigm </li>
                     <ul>
-                        <li class="fragment"> especially: "ML as a Service" (MLaaS) </li>
+                        <li class="fragment"> especially: "ML-as-a-Service" (MLaaS) </li>
                     </ul>
                     <li class="fragment"> <span class="fragment highlight-green">Standards</span> promoting seamless exchange and deployment of ML models </li>
                     <ul>
@@ -212,7 +222,22 @@
             </section>
             <section>
 
-                <h3> Service-oriented Architectures </h3>
+                <h3> Service Orientation </h3>
+                <br/>
+                <ul>
+                    <li class="fragment"> "<em>as-a-Service</em>" paradigm to deliver software products </li>
+                    <small><ul>
+                        <li class="fragment"> roots in Service Oriented Architecture (~90s) </li>
+                        <li class="fragment"> well-known implementation: Web Services (~2000s) </li>
+                        <li class="fragment"> modern evolution: RESTful micro-services (~2010s) </li>
+                    </ul></small>
+                    <li class="fragment"> MLaaS growing trend </li>
+                    <small><ul>
+                        <li class="fragment"> i.e. IBM Watson ML, Amazon SageMaker, MS Azure ML Studio, Google Cloud ML Engine </li>
+                        <li class="fragment"> <span class="fragment highlight-current-green"> off-the-shelf solutions </span>: wide portfolio of models, customisation options, user friendly </li>
+                        <li class="fragment"> <span class="fragment highlight-current-red"> lack focus on <em>serving</em> models </span> (i.e. IBM MAX) </li>
+                    </ul></small>
+                </ul>
 
             </section>
             <section>
@@ -243,11 +268,9 @@
                         </ul></small>
                     </div>
                 </div>
-                <ul>
-                    <li class="fragment"> <span class="fragment highlight-green"> independent </span> development / deployment of predictive models </li>
-                    <li class="fragment"> <span class="fragment highlight-green"> flexibility </span> of production environment </li>
-                    <li class="fragment"> <span class="fragment highlight-green"> co-existence </span> of different programming languages and frameworks </li>
-                </ul>
+                <p class="fragment"> <span class="fragment highlight-green"> independent </span> development / deployment of predictive models </p>
+                <p class="fragment"> <span class="fragment highlight-green"> flexibility </span> of production environment </p>
+                <p class="fragment"> <span class="fragment highlight-green"> co-existence </span> of different programming languages and frameworks </p>
 
             </section>
         </section>
@@ -255,16 +278,39 @@
             <section data-transition="zoom">
 
                 <h3> Application </h3>
-
-            </section>
-            <section>
-
-                <h3> CONNECARE </h3>
+                <br/>
+                <ul>
+                    <li class="fragment"> Architecture implemented in <a href="https://connecare.eu"> CONNECARE </a> European project </li>
+                    <small><ul>
+                        <li class="fragment"> Predictions about hospitalisations, emergency re-admissions, mortality </li>
+                        <li class="fragment"> Models created by partners with locally available data (6000+ patients with 5+ years follow-ups) </li>
+                    </ul></small>
+                    <li class="fragment"> DSS as <span class="fragment highlight-green"> precious asset </span> to let clinical partners
+                        <ul>
+                            <li class="fragment"> use and validate each other models </li>
+                            <li class="fragment"> cooperatively improve models without data sharing </li>
+                            <li class="fragment"> assess transferability </li>
+                        </ul>
+                </ul>
 
             </section>
             <section>
 
                 <h3> Risk Prediction </h3>
+                <img width="503" height="225" align="center" data-src="usecase-hcb.png" alt="CONNECARE readmission risk prediction use case">
+                <p class="fragment"> Home Hospitalisation (HH) / Early Discharge (ED) </p>
+                <small><ul>
+                    <li class="fragment"> During HH / ED (t0) >> stratify patients to <em>optimise care</em> (Risk Models 1-3) </li>
+                    <ul>
+                        <li class="fragment"> risk of early readmission after hospital discharge </li>
+                        <li class="fragment"> risk of mortality </li>
+                    </ul>
+                    <li class="fragment"> after HH / ED (t1) >> stratify patients for <em>transitional care</em> (Risk Models 4-6) </li>
+                    <ul>
+                        <li class="fragment"> risk of early readmission after hospital discharge </li>
+                        <li class="fragment"> risk of mortality </li>
+                    </ul>
+                </ul></small>
 
             </section>
         </section>
@@ -272,9 +318,25 @@
             <section data-transition="zoom">
 
                 <h3> Conclusion </h3>
+                <br/>
+                <p> <em>Reference architecture</em> for a DSS, promoting </p>
+                <small><ul>
+                    <li class="fragment"> <span class="fragment highlight-green"> interoperability </span> amongst technological environments </li>
+                    <li class="fragment"> <span class="fragment highlight-green"> collaboration </span> between teams of data scientists, and towards clinical staff </li>
+                </ul></small>
+                <p> State of art tech + ML standards = support to practical use cases </p>
+                <small><ul>
+                    <li class="fragment"> service-orientation, REST architecture </li>
+                    <li class="fragment"> PMML and PFA data formats </li>
+                </ul></small>
+                <p> Running implementation within CONNECARE </p>
+                <small><ul>
+                    <li class="fragment"> clinical case studies ending after summer >> <span class="fragment highlight-green"> assessment </span> of DSS efficacy </li>
+                    <li class="fragment"> CONNECARE ending Dec 2019 >> DSS released as <span class="fragment highlight-green"> open-source </span></li>
+                </ul></small>
 
             </section>
-            <section data-autoslide="5000">
+            <section data-autoslide="2000">
 
                 <br/>
                 <h2> Thanks </h2>
@@ -288,11 +350,11 @@
                 <p><small><em> Università di Modena e Reggio Emilia </em></small></p>
 
             </section>
-            <section data-autoslide="5000">
+            <!--<section data-autoslide="3000">
 
                 <h3> References </h3>
 
-            </section>
+            </section>-->
         </section>
     </div>
 </div>

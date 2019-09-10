@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 
-    <title> Risk Prediction as a Service. CBMS 2019 @ Cordoba, Spain </title>
-    <meta content="Presentation 'Risk Prediction as a Service' given by Stefano Mariani @ CBMS 2019 - Cordoba, Spain" name="description">
+    <title> FluidWare PRIN kick-off meeting. Modena, 11/09/2019 </title>
+    <meta content="Presentation 'Blockchain-based Coordination' given by Stefano Mariani @ FluidWare PRIN kick-off meeting - Modena, 11/09/2019" name="description">
     <meta content="Stefano Mariani" name="author">
 
     <meta content="yes" name="apple-mobile-web-app-capable">
@@ -32,9 +32,9 @@
     <div class="slides">
         <section data-autoslide="5000" data-transition="fade">
 
-            <h2> Risk Prediction<br/>as a Service: </h2>
+            <h2> Blockchain-based Coordination: </h2>
             <br/>
-            <h4> a DSS architecture promoting<br/>interoperability and collaboration </h4>
+            <h4> why, how, gaps, prototype </h4>
             <br/>
             <br/>
             <p><a href="http://stefanomariani.apice.unibo.it"> Stefano Mariani </a></p>
@@ -44,179 +44,111 @@
         <section data-transition="convex">
 
             <h3> Outline </h3>
-            <br/>
+
             <ol>
-                <li class="fragment"> Scenario
-                <li class="fragment"> Proposition
-                <li class="fragment"> Enabling technologies
-                <li class="fragment"> Application
+                <li class="fragment"> Why coordination "on the block"(chain)?</li>
+                <li class="fragment"> How? Linda as benchmark</li>
+                <li class="fragment"> Conceptual and technical gaps</li>
+                <li class="fragment"> A prototype of pro-active Smart Contracts</li>
             </ol>
 
-            <aside class="notes">
-                <ol>
-                    <li> clinical prediction + use cases
-                    <li> goal + architecture + functionalities
-                    <li> PMML/PFA + SOA
-                    <li> connecare + HCB case study
-                </ol>
-            </aside>
-
         </section>
         <section data-transition="convex">
             <section data-transition="zoom">
 
-                <h3> Scenario </h3>
-                <br/>
+                <h3> Why? </h3>
+
+                <p class="fragment"> The Blockchain provides highly desirable properties from a coordination standpoint: </p>
+                    <small><ul>
+                        <li class="fragment"> partial / total <span class="fragment highlight-green"> ordering </span> of events</li>
+                        <li class="fragment"> adjustable <span class="fragment highlight-green"> consistency </span> of replicated data</li>
+                        <li class="fragment"> <span class="fragment highlight-green"> accountability </span> of actions</li>
+                        <li class="fragment"> <span class="fragment highlight-green"> identity </span> management, non-repudiation, authentication</li>
+                        <li class="fragment"> (Byzantine) adjustable <span class="fragment highlight-green"> fault-tolerance </span></li>
+                    </ul></small>
+                <p class="fragment"> <span class="fragment highlight-red">Name one which is NOT relevant to the Internet of Things vision, or distributed systems in general... </span></p>
+
+            </section>
+            <section>
+
+                <h3> Why not :) </h3>
+
                 <ul>
-                    <li class="fragment"> Growing <span class="fragment highlight-green"> ICT impact </span> on clinical practice and research
-                        <ul>
-                            <li class="fragment"> <em>ML</em> >> <span class="fragment"> predictive modelling >> </span> <span class="fragment"> decision support </span>
-                            <li class="fragment"> i.e. risk prediction
-                        </ul>
-                    <li class="fragment"><em>Barriers</em> to overcome
-                        <ul>
-                            <li class="fragment highlight-current-red"> standards
-                            <li class="fragment highlight-current-red"> technological development
-                        </ul>
+                    <li class="fragment"> can the Blockchain <span class="fragment highlight-red">mediate interaction</span>?</li>
+                        <small><ul>
+                            <li class="fragment"> amongst off-chain entities</li>
+                            <li class="fragment"> amongst on-chain entities</li>
+                            <li class="fragment"> amongst both</li>
+                            <li class="fragment"> amongst any combination thereof</li>
+                        </ul></small>
+                    <li class="fragment"> can the Blockchain act as a <span class="fragment highlight-red">coordination medium</span>?</li>
+                        <small><ul>
+                            <li class="fragment"> fixed coordination laws?</li>
+                            <li class="fragment"> application-level coordination laws?</li>
+                        </ul></small>
                 </ul>
 
             </section>
-            <section data-autoslide="2000" data-background="DSS-usecase.png" data-background-size="1600px">
-
-                <h3 class="fragment highlight-green"> Use cases </h3>
-
-            </section>
-            <section>
-
-                <ol>
-                    <li class="fragment"> Data science teams want to <span class="fragment highlight-green"> join efforts </span> for better predictive models
-                        <ul>
-                            <li class="fragment"> geographical distribution >> <span class="fragment highlight-current-red"> remote collaboration only </span>
-                            <li class="fragment"> different organisations >> <span class="fragment highlight-current-red"> data sharing cumbersome </span>
-                            <li class="fragment"> different technical skills >> <span class="fragment highlight-current-red"> sharing code barely useful </span>
-                        </ul>
-                </ol>
-
-            </section>
-            <section>
-
-                <h3></h3>
-                <br/>
-                <ol start="2">
-                    <li class="fragment"> Clinical staff wants to <span class="fragment highlight-green"> experiment </span> predictive modeling
-                        <ul>
-                            <li class="fragment"> lacks IT resources >> <span class="fragment highlight-current-red"> up-front investment </span>
-                            <li class="fragment"> lacks IT skills >> <span class="fragment highlight-current-red"> steep learning curve </span>
-                        </ul>
-                </ol>
-
-            </section>
-            <section>
-
-                <h3></h3>
-                <br/>
-                <ol start="3">
-                    <li class="fragment"> Healthcare organisations want to assess <span class="fragment highlight-green"> transferability </span> of models
-                        <ul>
-                            <li class="fragment"> lack reciprocal trust >> <span class="fragment highlight-current-red"> no data disclosure </span>
-                            <li class="fragment"> different technical skills >> <span class="fragment highlight-current-red"> incompatible models </span>
-                        </ul>
-                </ol>
-
-            </section>
         </section>
         <section data-transition="convex">
             <section data-transition="zoom">
 
-                <h3> Proposition </h3>
-                <br/>
-                <p class="fragment grow"> Ubiquitous <span class="fragment highlight-green">access</span> & seamless <span class="fragment highlight-green">deployment</span> </p>
-                <p class="fragment fade-in-then-semi-out"> of prediction models. </p>
-                <p class="fragment grow"> Interoperability & collaboration </p>
-                <p class="fragment fade-in-then-semi-out"> between data science teams and, possibly, clinicians. </p>
-                <p class="fragment"></p>
+                <h3> How? </h3>
 
-            </section>
-            <section>
-
-                <h3> Architecture </h3>
-                <br/>
-                <p>
-                    <img width="512" height="384" align="left" data-src="DSS-arch.png" alt="DSS architecture">
-                <p class="fragment fade-in-then-semi-out"> <small> <strong>Web API</strong>: RESTful endpoints </small></p>
-                <p class="fragment"> <small> <strong>Translation</strong>: R/Python models to </small><span class="fragment highlight-green"><small> PMML/PFA </small></span></p>
-                <p class="fragment fade-in-then-semi-out"> <small> <strong>Prediction</strong>: Serve predictions </small></p>
-                <p class="fragment fade-in-then-semi-out"> <small> <strong>Learning</strong>: Build prediction models </small></p>
-                <p class="fragment fade-in-then-semi-out"> <small> <strong>Storage</strong>: Store models </small></p>
-                <p class="fragment"></p>
-                </p>
-
-            </section>
-            <section>
-
-                <h3> Functionalities </h3>
-                <div class="row" style="display: flex">
-                    <div class="column" style="flex: 50%">
-                        <ul>
-                            <li> <span class="fragment highlight-green"> Plugin mode</span>: </li>
-                            <ul>
-                                <li class="fragment"> upload model </li>
-                                <li class="fragment"> list models </li>
-                                <li class="fragment"> <em>inspect</em> model <small>(metadata)</small></li>
-                                <li class="fragment"> download model </li>
-                                <li class="fragment"> delete model </li>
-                                <li class="fragment"> apply model </li>
-                            </ul>
-                        </ul>
-                    </div>
-                    <div class="column" style="flex: 50%">
-                        <ul>
-                            <li> <span class="fragment highlight-green">Learning mode</span>: </li>
-                            <ul>
-                                <li class="fragment"> train model </li>
-                                <li class="fragment"> test model </li>
-                                <li class="fragment"> <em>save</em> model <small>(freeze)</small></li>
-                                <li class="fragment"> discard model </li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-                <br/>
+                <p class="fragment highlight-green"> Let's use the archetypal Linda model as a benchmark! </p>
                 <ul>
-                    <li> Common: </li>
-                    <ul>
-                        <li class="fragment"> set <em>global</em> <small>(usable anywhere vs. provider site)</small> </li>
-                        <li class="fragment"> set <em>online</em> <small>(learning on new data vs. "frozen")</small> </li>
-                    </ul>
+                    <li class="fragment"> can the Blockchain implement Linda <span class="fragment highlight-red"> core abstractions</span>?</li>
+                        <small><ul>
+                            <li class="fragment"> tuples</li>
+                            <li class="fragment"> templates</li>
+                            <li class="fragment"> matching</li>
+                            <li class="fragment"> tuple space</li>
+                            <li class="fragment"> primitives</li>
+                        </ul></small>
+                    <li class="fragment"> can the Blockchain preserve Linda <span class="fragment highlight-red">essential properties</span>?</li>
+                    <small><ul>
+                        <li class="fragment"> generative communication</li>
+                        <li class="fragment"> associative access</li>
+                        <li class="fragment"> suspensive semantics</li>
+                        <li class="fragment"> reference, time, space uncoupling</li>
+                    </ul></small>
                 </ul>
 
             </section>
             <section>
 
-                <h3> Non-functional Properties </h3>
-                <br/>
-                <p class="fragment"> <strong>Trust</strong>: local validation + transparency <small>(inspection)</small> </p>
-                <p class="fragment"> <strong>Language / framework agnostic</strong>: automatic translation + PMML/PFA <small>(R, caret + Python, scikit-learn)</small> </p>
-                <p class="fragment"> <strong>Interoperability</strong>: PMML/PFA, HTTP API, JSON/XML data </p>
-                <p class="fragment"> <strong>Accessibility</strong>: Web Service, REST architecture </p>
+                <h3> Which blockchain? </h3>
+
+                <ul>
+                <li class="fragment highlight-red">"The" Blockchain is a blurred concept</li>
+                <li class="fragment">Depending on</li>
+                    <small><ul>
+                        <li class="fragment"><span class="fragment highlight-green">openness </span>(permission-ed/less)</li>
+                        <li class="fragment"><span class="fragment highlight-green">access control </span>(w.r.t. assets)</li>
+                        <li class="fragment"><span class="fragment highlight-green">architecture </span>(clients, miners, ...)</li>
+                        <li class="fragment"><span class="fragment highlight-green">state model </span>(how data is tracked)</li>
+                        <li class="fragment"><span class="fragment highlight-green">asset </span>(money, ownership, ...)</li>
+                        <li class="fragment"><span class="fragment highlight-green">programmability </span>(smart contracts, chaincode, ...)</li>
+                        <li class="fragment"><span class="fragment highlight-green">meta-primitives </span>(deploy, invoke, ...)</li>
+                        <li class="fragment"><span class="fragment highlight-green">primitives </span>(send, log, ...)</li>
+                        <li class="fragment"><span class="fragment highlight-green">consensus </span>(degree of consistency / fault-tolerance)</li>
+                        <li class="fragment"><span class="fragment highlight-green">finitness </span>(finite computations)</li>
+                    </ul></small>
+                </ul>
 
             </section>
         </section>
         <section data-transition="convex">
             <section data-transition="zoom">
 
-                <h3> Enabling technologies</h3>
-                <br/>
+                <h3> Ethereum </h3>
+
                 <ul>
-                    <li class="fragment"> <span class="fragment highlight-green">"<em>X</em>-as-a-Service"</span> paradigm </li>
-                    <ul>
-                        <li class="fragment"> especially: "ML-as-a-Service" (MLaaS) </li>
-                    </ul>
-                    <li class="fragment"> <span class="fragment highlight-green">Standards</span> promoting seamless exchange and deployment of ML models </li>
-                    <ul>
-                        <li class="fragment"> don't brake the <em>data pipeline</em> </li>
-                        <li class="fragment"> language / framework agnostic >> <span class="fragment"><em>"build once, run everywhere"</em> </span></li>
-                    </ul>
+                    <li class="fragment">Permissionless blockchain featuring Smart Contracts</li>
+                    <li class="fragment">No access control, nodes are either clients or miners</li>
+                    <li class="fragment">Any byte string can be the asset to keep track of</li>
+                    <li class="fragment">Consensus via Proof-of-Work</li>
+                    <li class="fragment">ETH cryptocurrency and Gas guarantee finite computations</li>
                 </ul>
 
             </section>

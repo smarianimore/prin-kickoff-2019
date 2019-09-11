@@ -59,12 +59,12 @@
                 <h3> Why? </h3>
 
                 <p class="fragment"> The Blockchain provides highly desirable properties from a coordination standpoint: </p>
-                    <small><ul>
-                        <li class="fragment"> partial / total <span class="fragment highlight-green"> ordering </span> of events</li>
-                        <li class="fragment"> adjustable <span class="fragment highlight-green"> consistency </span> of replicated data</li>
-                        <li class="fragment"> <span class="fragment highlight-green"> accountability </span> of actions</li>
-                        <li class="fragment"> <span class="fragment highlight-green"> identity </span> management, non-repudiation, authentication</li>
-                        <li class="fragment"> (Byzantine) adjustable <span class="fragment highlight-green"> fault-tolerance </span></li>
+                    <small><ul class="fragment">
+                        <li> partial / total <span class="fragment highlight-green"> ordering </span> of events</li>
+                        <li> adjustable <span class="fragment highlight-green"> consistency </span> of replicated data</li>
+                        <li> <span class="fragment highlight-green"> accountability </span> of actions</li>
+                        <li> <span class="fragment highlight-green"> identity </span> management, non-repudiation, authentication</li>
+                        <li> (Byzantine) adjustable <span class="fragment highlight-green"> fault-tolerance </span></li>
                     </ul></small>
                 <p class="fragment"> <span class="fragment highlight-red">Name one which is NOT relevant to the Internet of Things vision, or distributed systems in general... </span></p>
 
@@ -75,16 +75,16 @@
 
                 <ul>
                     <li class="fragment"> can the Blockchain <strong>mediate interaction</strong>?</li>
-                        <small><ul>
-                            <li class="fragment"> amongst off-chain entities</li>
-                            <li class="fragment"> amongst on-chain entities</li>
-                            <li class="fragment"> amongst both</li>
-                            <li class="fragment"> amongst any combination thereof</li>
+                        <small><ul class="fragment">
+                            <li> amongst off-chain entities</li>
+                            <li> amongst on-chain entities</li>
+                            <li> amongst both</li>
+                            <li> amongst any combination thereof</li>
                         </ul></small>
                     <li class="fragment"> can the Blockchain act as a <strong>coordination medium</strong>?</li>
-                        <small><ul>
-                            <li class="fragment"> fixed coordination laws?</li>
-                            <li class="fragment"> application-level coordination laws?</li>
+                        <small><ul class="fragment">
+                            <li> fixed coordination laws?</li>
+                            <li> application-level coordination laws?</li>
                         </ul></small>
                 </ul>
 
@@ -98,41 +98,41 @@
                 <p class="fragment"> <em>Let's use the archetypal Linda model as a benchmark!</em> </p>
                 <ul>
                     <li class="fragment"> can the Blockchain implement Linda <strong> core abstractions</strong>?</li>
-                        <small><ul>
-                            <li class="fragment"> tuples</li>
-                            <li class="fragment"> templates</li>
-                            <li class="fragment"> matching</li>
-                            <li class="fragment"> tuple space</li>
-                            <li class="fragment"> primitives</li>
+                        <small><ul class="fragment">
+                            <li> tuples</li>
+                            <li> templates</li>
+                            <li> matching</li>
+                            <li> tuple space</li>
+                            <li> primitives</li>
                         </ul></small>
                     <li class="fragment"> can the Blockchain preserve Linda <strong>essential properties</strong>?</li>
-                    <small><ul>
-                        <li class="fragment"> generative communication</li>
-                        <li class="fragment"> associative access</li>
-                        <li class="fragment"> suspensive semantics</li>
-                        <li class="fragment"> reference, time, space uncoupling</li>
+                    <small><ul class="fragment">
+                        <li> generative communication</li>
+                        <li> associative access</li>
+                        <li> suspensive semantics</li>
+                        <li> reference, time, space uncoupling</li>
                     </ul></small>
                 </ul>
 
             </section>
-            <section data-autoslide="500">
+            <section>
 
                 <h3> Which blockchain? </h3>
 
 
                 <p class="fragment"><em>"The" Blockchain is a blurred concept</em></p>
                 <p class="fragment">Depending on</p>
-                    <small><ul>
-                        <li class="fragment"><span class="fragment highlight-red">openness </span>(permission-ed/less)</li>
-                        <li class="fragment"><span class="fragment highlight-red">access control </span>(w.r.t. assets)</li>
-                        <li class="fragment"><span class="fragment highlight-red">architecture </span>(clients, miners, ...)</li>
-                        <li class="fragment"><span class="fragment highlight-red">state model </span>(how data is tracked)</li>
-                        <li class="fragment"><span class="fragment highlight-red">asset </span>(money, ownership, ...)</li>
-                        <li class="fragment"><span class="fragment highlight-red">programmability </span>(smart contracts, chaincode, ...)</li>
-                        <li class="fragment"><span class="fragment highlight-red">meta-primitives </span>(deploy, invoke, ...)</li>
-                        <li class="fragment"><span class="fragment highlight-red">primitives </span>(send, log, ...)</li>
-                        <li class="fragment"><span class="fragment highlight-red">consensus </span>(degree of consistency / fault-tolerance)</li>
-                        <li class="fragment"><span class="fragment highlight-red">finitness </span>(finite computations)</li>
+                    <small><ul class="fragment">
+                        <li><span class="fragment highlight-red">openness </span>(permission-ed/less)</li>
+                        <li><span class="fragment highlight-red">access control </span>(w.r.t. assets)</li>
+                        <li><span class="fragment highlight-red">architecture </span>(clients, miners, ...)</li>
+                        <li><span class="fragment highlight-red">state model </span>(how data is tracked)</li>
+                        <li><span class="fragment highlight-red">asset </span>(money, ownership, ...)</li>
+                        <li><span class="fragment highlight-red">programmability </span>(smart contracts, chaincode, ...)</li>
+                        <li><span class="fragment highlight-red">meta-primitives </span>(deploy, invoke, ...)</li>
+                        <li><span class="fragment highlight-red">primitives </span>(send, log, ...)</li>
+                        <li><span class="fragment highlight-red">consensus </span>(degree of consistency / fault-tolerance)</li>
+                        <li><span class="fragment highlight-red">finitness </span>(finite computations)</li>
                     </ul></small>
                 <p class="fragment">radically <span class="fragment highlight-red">different blockchains</span> may be defined, with specific functional / non-functional properties</p>
 
@@ -143,12 +143,12 @@
 
                 <h3> Ethereum </h3>
 
-                <ul>
-                    <li class="fragment">Permission<strong>less</strong> blockchain featuring Smart Contracts</li>
-                    <li class="fragment">No access control, nodes are either clients or miners</li>
-                    <li class="fragment">Any byte string can be the asset to keep track of</li>
-                    <li class="fragment">Consensus via <strong>Proof-of-Work</strong> (resistant to Byzantine failures)</li>
-                    <li class="fragment"><strong>Native cryptocurrency</strong> (ETH) and Gas guarantee finite computations</li>
+                <ul class="fragment">
+                    <li>Permission<strong>less</strong> blockchain featuring Smart Contracts</li>
+                    <li>No access control, nodes are either clients or miners</li>
+                    <li>Any byte string can be the asset to keep track of</li>
+                    <li>Consensus via <strong>Proof-of-Work</strong> (resistant to Byzantine failures)</li>
+                    <li><strong>Native cryptocurrency</strong> (ETH) and Gas guarantee finite computations</li>
                 </ul>
 
             </section>
@@ -158,12 +158,12 @@
 
                 <ul>
                     <li class="fragment">Mapping:</li>
-                    <small><ul>
-                        <li class="fragment"> Smart Contracts implement the tuple space API </li>
-                        <li class="fragment"> strings are tuples, regular expressions templates </li>
-                        <li class="fragment"> generative communication via blocks </li>
-                        <li class="fragment"> associative access via regex pattern matching  </li>
-                        <li class="fragment"> suspensive semantics via Ethereum <strong>events mechanism</strong> </li>
+                    <small><ul class="fragment">
+                        <li> Smart Contracts implement the tuple space API </li>
+                        <li> strings are tuples, regular expressions templates </li>
+                        <li> generative communication via blocks </li>
+                        <li> associative access via regex pattern matching  </li>
+                        <li> suspensive semantics via Ethereum <strong>events mechanism</strong> </li>
                     </ul></small>
                     <li class="fragment"><span class="fragment highlight-red">Calling primitives costs money</span></li>
                     <small><ul>
@@ -180,12 +180,12 @@
 
                 <h3> HyperLedger Fabric </h3>
 
-                <ul>
-                    <li class="fragment">Permission<strong>ed</strong></span> blockchain featuring Chaincodes</li>
-                    <li class="fragment"><strong>Membership service</strong> and channels for access control, nodes can be endorserers, orderers, peers</li>
-                    <li class="fragment">Any serialisable key-value pair can be the asset to keep track of</li>
-                    <li class="fragment">Pluggable consensus (default: PBFT)</li>
-                    <li class="fragment">Execute-Order-Validate architecture guarantees finite computations</li>
+                <ul class="fragment">
+                    <li>Permission<strong>ed</strong></span> blockchain featuring Chaincodes</li>
+                    <li><strong>Membership service</strong> and channels for access control, nodes can be endorserers, orderers, peers</li>
+                    <li>Any serialisable key-value pair can be the asset to keep track of</li>
+                    <li>Pluggable consensus (default: PBFT)</li>
+                    <li>Execute-Order-Validate architecture guarantees finite computations</li>
                 </ul>
 
                 <aside class="notes">timeouts stop infinite loops</aside>
@@ -197,12 +197,12 @@
 
                 <ul>
                     <li class="fragment">Mapping:</li>
-                    <small><ul>
-                        <li class="fragment"> Chaincodes implement the tuple space API </li>
-                        <li class="fragment"> strings are tuples, regular expressions templates </li>
-                        <li class="fragment"> generative communication via blocks </li>
-                        <li class="fragment"> associative access via regex pattern matching  </li>
-                        <li class="fragment"> suspensive semantics via HyperLedger <strong>events mechanism</strong> </li>
+                    <small><ul class="fragment">
+                        <li> Chaincodes implement the tuple space API </li>
+                        <li> strings are tuples, regular expressions templates </li>
+                        <li> generative communication via blocks </li>
+                        <li> associative access via regex pattern matching  </li>
+                        <li> suspensive semantics via HyperLedger <strong>events mechanism</strong> </li>
                     </ul></small>
                     <li class="fragment"><span class="fragment highlight-green">Fine-grained access control, adjustable consensus</span></li>
                     <li class="fragment"><span class="fragment highlight-red">Dirty implementation (e.g. rd)</span></li>
@@ -218,12 +218,12 @@
 
                 <h3> R3 Corda </h3>
 
-                <ul>
-                    <li class="fragment">Permission<strong>ed</strong></span> blockchain featuring Flows and Contracts</li>
-                    <li class="fragment"><strong>Doorman service</strong> for access control, nodes can be notaries or peers</li>
-                    <li class="fragment">Any serialisable object can be the asset to keep track of</li>
-                    <li class="fragment">Pluggable consensus</li>
-                    <li class="fragment">No guarantees for finite computations</li>
+                <ul class="fragment">
+                    <li>Permission<strong>ed</strong></span> blockchain featuring Flows and Contracts</li>
+                    <li><strong>Doorman service</strong> for access control, nodes can be notaries or peers</li>
+                    <li>Any serialisable object can be the asset to keep track of</li>
+                    <li>Pluggable consensus</li>
+                    <li>No guarantees for finite computations</li>
                 </ul>
 
                 <aside class="notes">contracts are trusted</aside>
@@ -235,12 +235,12 @@
 
                 <ul>
                     <li class="fragment">Mapping:</li>
-                    <small><ul>
-                        <li class="fragment"> Vaults implement the tuple space API </li>
-                        <li class="fragment"> strings are tuples, regular expressions templates </li>
-                        <li class="fragment"> generative communication via blocks </li>
-                        <li class="fragment"> associative access via regex pattern matching </li>
-                        <li class="fragment"> suspensive semantics via Flows </li>
+                    <small><ul class="fragment">
+                        <li> Vaults implement the tuple space API </li>
+                        <li> strings are tuples, regular expressions templates </li>
+                        <li> generative communication via blocks </li>
+                        <li> associative access via regex pattern matching </li>
+                        <li> suspensive semantics via Flows </li>
                     </ul></small>
                     <li class="fragment"><span class="fragment highlight-red">Reference uncoupling lost</span></li>
                     <li class="fragment"><span class="fragment highlight-green">Subjective view of tuple space</span></li>

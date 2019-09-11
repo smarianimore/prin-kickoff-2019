@@ -115,7 +115,7 @@
                 </ul>
 
             </section>
-            <section>
+            <section data-autoslide="2000">
 
                 <h3> Which blockchain? </h3>
 
@@ -263,6 +263,9 @@
                     <li class="fragment"> Unfortunately, they are often abstracted away when modeling blockchain to prove properties... </li>
                 </ul>
                 <p class="fragment"> <span class="fragment highlight-green"> Blockchain-based coordination seems nevertheless possible :) </span></p>
+                <small>
+                    <p class="fragment"><em>only amongst off-chain nodes, open to application-level laws</em></p>
+                </small>
 
             </section>
             <section>
@@ -301,15 +304,15 @@
 
                 <ul>
                     <li class="fragment"> Minimal Smart Contracts language </li>
-                    <ul>
+                    <small><ul>
                         <li class="fragment">.init, .send, .when, .every</li>
-                    </ul>
+                    </ul></small>
                     <li class="fragment"> Suitable Smart Contracts interpreter </li>
                     <li class="fragment"> Suitable blockchain as execution infrastructure </li>
-                    <ul>
+                    <small><ul>
                         <li class="fragment"><a href="http://tendermint.com">Tendermint</a></li>
                         <li class="fragment">Byzantine fault-tolerant state machine replication infrastructure (ledger + consensus + dev API)</li>
-                    </ul>
+                    </ul></small>
                 </ul>
 
             </section>
@@ -317,7 +320,34 @@
 
                 <h3> Architecture </h3>
 
+                <p>
+                    <!--<img width="548" height="386" align="left" data-src="tenderfone-arch.png" alt="Tenderfone architecture">-->
+                <img width="411" height="289" align="left" data-src="tenderfone-arch.png" alt="Tenderfone architecture">
+                <li class="fragment">tuProlog interprets the Tenderfone language</li>
+                <li class="fragment">Tendermint takes care of consensus amongst replicas</li>
+                <li class="fragment">Tenderfone exposes to developers a declarative API akin to Prolog</li>
+                <small>
+                    <p class="fragment"><span class="fragment highlight-green">.init -> own control flow</span></p>
+                    <p class="fragment"><span class="fragment highlight-green">.send -> asynchronous interaction</span></p>
+                    <p class="fragment"><span class="fragment highlight-green">.when, .every -> time-awareness</span></p>
+                </small>
 
+                </p>
+
+            </section>
+        </section>
+        <section data-transition="convex">
+            <section data-transition="zoom">
+
+                <h3> W.r.t. Fluidware? </h3>
+
+                <p class="fragment grow fade-in-then-semi-out"> <em>Blockchain as the interaction layer for funnel processes?</em> </p>
+                <ul>
+                    <li class="fragment"><span class="fragment highlight-green">devices as nodes</span> -> identity management, non-repudiation, authentication</li>
+                    <li class="fragment"><span class="fragment highlight-green">events on the ledger</span> -> partial / total ordering, consistency</li>
+                    <li class="fragment"><span class="fragment highlight-green">funnel processes primitives as transactions</span> -> accountability</li>
+                </ul>
+                <p class="fragment grow fade-in-then-semi-out"> <em>(Byzantine) fault-tolerance, trust, etc. transparently w.r.t. applications and programming language</em> </p>
 
             </section>
         </section>

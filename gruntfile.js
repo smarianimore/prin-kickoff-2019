@@ -105,7 +105,7 @@ module.exports = grunt => {
 				options: {
 					port: port,
 					base: root,
-					livereload: false,
+					livereload: true,
 					open: true,
 					useAvailablePort: true
 				}
@@ -156,7 +156,7 @@ module.exports = grunt => {
 				files: root.map(path => path + '/*.md')
 			},
 			options: {
-				livereload: true
+				livereload: false
 			}
 		}
 
